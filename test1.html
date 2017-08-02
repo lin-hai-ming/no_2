@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" />
+	</head>
+	<style type="text/css">
+		body {
+			background-color: rgba(0, 0, 0, .9);
+		}
+		[id^="box"]{
+			position: relative;
+			height: 700px;
+			background-color: #222222;
+			margin-left: 2%;
+			overflow: hidden;
+			
+		}
+		.container-fluid .p1 {
+			margin-top: 10px;
+			font-size: 16px;
+			color:  rgba(255,255,255,.7);
+			text-align: center;
+		}
+		.container-fluid .p2 {
+			margin-top: 10px;
+			font-size: 16px;
+			color:  rgba(255,255,255,.7);
+			text-align: center;
+			line-height: 700px;
+		}
+		button{
+			margin-left: 2%;
+			margin-top: 1%;
+			width: 150px;
+		}
+		.mymodal_out{
+			position: relative;
+			left: 900px;
+			margin: 5%;
+			padding: 5%;
+			background-color:white;
+			transition: 1s;
+		}
+		.mymodal_in{
+			position: relative;
+			left: 0px;
+			margin: 5%;
+			padding: 5%;
+			background-color:white;
+			transition: 1s;
+		}
+		#mymodal_2{
+			position: relative;			
+			height: 250px;
+			background-color:white;
+		}
+		table{
+			text-align: center;
+		}
+		table .glyphicon-ok{
+			color: greenyellow;
+		}
+		table .glyphicon-remove{
+			color: red;
+		}
+		#remove{
+			color: darkgrey;
+			position: relative;
+			left: 95%;
+			font-size: 22px;
+		}
+		#remove:hover{
+			color: gray;
+		}
+		
+		
+	</style>
+
+	<body>
+		<div class="container-fluid mycontainer">
+			<div class="row">
+				<div class="col-md-12">
+					<p class="p1">这是一个测试页面</p>
+				</div>
+			</div>
+
+		</div>
+		<div class="container-fluid mycontainer">
+			<div class="row">
+				<div class="col-md-7"  id="box1">
+					<p class="p2">这个格子输入代码</p>
+				</div>
+				<div class="col-md-4" id="box2">
+					<div class="mymodal_out" id="mymodal">
+						<div class="">
+							<span class="glyphicon glyphicon-remove" id="remove" onclick="modal_out()"></span>
+							<br />
+							<div class="" id="mymodal_2">
+								<table class="table table-hover">
+									<thead>
+										<tr>
+											<th>No</th>
+											<th>Inputs</th>
+											<th>Expected output</th>
+											<th>You output</th>
+											<th>Result</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>1</td>
+											<td>55,10</td>
+											<td>5</td>
+											<td>5</td>
+											<td><span class="glyphicon glyphicon-ok"></span></td>
+										</tr>
+										<tr>
+											<td>2</td>
+											<td>55,10</td>
+											<td>5</td>
+											<td>5</td>
+											<td><span class="glyphicon glyphicon-ok"></span></td>
+										</tr>
+										<tr>
+											<td>3</td>
+											<td>55,10</td>
+											<td>33</td>
+											<td>1</td>
+											<td><span class="glyphicon glyphicon-remove"></span></td>
+										</tr>
+										<tr>
+											<td>4</td>
+											<td>55,10</td>
+											<td>27</td>
+											<td>27</td>
+											<td><span class="glyphicon glyphicon-ok"></span></td>
+										</tr>
+										<tr>
+											<td>5</td>
+											<td>55,10</td>
+											<td>11</td>
+											<td>13</td>
+											<td><span class="glyphicon glyphicon-remove"></span></td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+							<hr class="divider" />
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<button class="btn btn-primary btn-lg">Run</button>
+		<button class="btn btn-primary btn-lg" id="sumbit" onclick="modal_in()">Submit</button>
+		<script type="text/javascript">
+			
+			function modal_in(){
+				var mymodal=document.getElementById("mymodal");
+				mymodal.className="mymodal_in";
+			}
+			function modal_out(){
+				var mymodal=document.getElementById("mymodal");
+				mymodal.className="mymodal_out";
+			}
+			
+		</script>
+	</body>
+
+</html>
